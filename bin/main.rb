@@ -1,7 +1,14 @@
 #!/usr/bin/env ruby
 
 class Game
-    
+    def initialize
+      @board = Board.new
+      puts "Player 1, input name:"
+      @player_1 = Player.new(gets.chomp, "X", @board)
+      puts "Player 2, input name:"
+      @player_2 = Player.new(gets.chomp, "O", @board)
+      @current_player = @player_1
+    end
 end
 
 class Player
@@ -33,3 +40,6 @@ end
 
 new_board = Board.new
 new_board.display_board
+
+new_game = Game.new
+new_game
