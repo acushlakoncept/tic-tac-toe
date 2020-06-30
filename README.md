@@ -1,5 +1,26 @@
 # Implementing Tic Tac Toe Game with Ruby
 
+This is project is to demonstrate our knowledge of Object Oriented Programming Language in Ruby, building a tic-tac-toe game on the command line where two human players can play against each other and the board is displayed in between turns.
+
+## Built With
+
+- Ruby
+
+## Live Code
+[Solution](#)
+
+
+## Getting Started
+
+To get a local copy of the repository please run the following commands on your terminal:
+
+```
+$ cd <folder>
+```
+
+```
+$ git clone https://github.com/acushlakoncept/tic-tac-toe.git
+```
 
 ## Authors
 
@@ -9,11 +30,11 @@
 - Twitter: [@acushlakoncept](https://twitter.com/acushlakoncept)
 - Linkedin: [acushlakoncept](https://www.linkedin.com/in/acushlakoncept/)
 
-👤 **Elijah**
+👤 **Elijah Ayandokun**
 
-- Github: [Elijah](https://github.com/jacobrees)
-- Linkedin: [Elijah](https://www.linkedin.com/in/jacob-rees-a6507b1a6/)
-
+- Github: [@elijahtobs](https://github.com/elijahtobs)
+- Linkedin: [Elijah Ayandokun](https://www.linkedin.com/in/ayandokunelijah/)
+- Twitter: [@ElijahTobs](https://twitter.com/ElijahTobs)
 
 ## 🤝 Contributing
 
