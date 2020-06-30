@@ -9,11 +9,11 @@
 - Twitter: [@acushlakoncept](https://twitter.com/acushlakoncept)
 - Linkedin: [acushlakoncept](https://www.linkedin.com/in/acushlakoncept/)
 
-👤 **Elijah**
+👤 **Elijah Ayandokun**
 
-- Github: [Elijah](https://github.com/jacobrees)
-- Linkedin: [Elijah](https://www.linkedin.com/in/jacob-rees-a6507b1a6/)
-
+- Github: [@elijahtobs](https://github.com/elijahtobs)
+- Linkedin: [ELijah Ayandokun](https://www.linkedin.com/in/ayandokunelijah/)
+- Twitter: [@ElijahTobs](https://twitter.com/ElijahTobs)
 
 ## 🤝 Contributing
 
