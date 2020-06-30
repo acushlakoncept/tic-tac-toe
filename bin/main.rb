@@ -11,20 +11,22 @@ class Game
   end
 
   def play
-    # loop
-
     puts 'Game has started!'
-    # render the board
-    @board.display_board
-    # ask for the current players position
-    puts "#{@current_player.name}, Choose from 1 - 9"
-    # break out of the loop If the game is over
-    # switch players
+    loop do
+      # render the board
+      @board.display_board
+      # ask for the current players position
+      puts "#{@current_player.name}, Choose from 1 - 9"
+      break if game_over?
+
+      switch_players
+    end
   end
 
   def game_over?
     # check_winner
     # check_draw
+    true
   end
 
   def check_winner
