@@ -9,6 +9,12 @@ class Game
       @player_2 = Player.new(gets.chomp, "O", @board)
       @current_player = @player_1
     end
+
+    def play
+      puts "Game has started!"
+      @board.display_board
+      puts "#{@current_player.name}, Choose from 1 - 9"
+    end
 end
 
 class Player
@@ -18,6 +24,10 @@ class Player
         @name = name
         @piece = piece
         @board = board
+    end
+
+    def position
+      
     end
 end
 
@@ -34,12 +44,11 @@ class Board
         puts "#{@board[6]} | #{@board[7]} | #{@board[8]}"
     end
 
-
 end
 
 
-new_board = Board.new
-new_board.display_board
+# new_board = Board.new
+# new_board.display_board
 
 new_game = Game.new
-new_game
+new_game.play
