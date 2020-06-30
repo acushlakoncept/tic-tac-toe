@@ -11,9 +11,34 @@ class Game
     end
 
     def play
+      #loop
+      
       puts "Game has started!"
+      #render the board
       @board.display_board
+      #ask for the current players position
       puts "#{@current_player.name}, Choose from 1 - 9"
+      #break out of the loop If the game is over
+      #switch players
+    end
+
+    def is_game_over?
+        #check_winner
+        #check_draw
+    end
+
+    def check_winner
+        #check if current player has a winner combination
+        #display win message
+    end
+
+    def check_draw
+        #check if board is filled up
+        #display draw message
+    end
+
+    def switch_players
+        #player 1 > player 2 or vice versa
     end
 end
 
@@ -26,9 +51,15 @@ class Player
         @board = board
     end
 
-    def position
-      
+    def ask_position
+        #get user position [1-9]
+        #check if position is valid
+        #set_piece
+        #else
+        #display_error and ask_position again
     end
+
+    
 end
 
 class Board
@@ -42,6 +73,18 @@ class Board
         puts "#{@board[3]} | #{@board[4]} | #{@board[5]}"
         puts "---------"
         puts "#{@board[6]} | #{@board[7]} | #{@board[8]}"
+    end
+
+    def set_piece
+        #set piece X or O on the board
+    end
+
+    def win_combo
+        #winning combinations
+    end
+
+    def is_full?
+        #is there still room to place piece?
     end
 
 end
