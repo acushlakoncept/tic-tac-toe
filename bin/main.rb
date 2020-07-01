@@ -122,8 +122,8 @@ class Board
     @positions[user_pos - 1] = piece
   end
 
-  def win_combo
-    # winning combinations
+  def win_combo?
+    diagonal_wins? || hori_wins? || vert_wins?
   end
 
   def diagonal_wins?(piece)
