@@ -2,7 +2,6 @@
 
 This is project is to demonstrate our knowledge of Object Oriented Programming Language in Ruby, building a tic-tac-toe game on the command line where two human players can play against each other and the board is displayed in between turns.
 
-## Screenshot
 ![screenshot](./screenshot.jpg)
 
 ## Built With
