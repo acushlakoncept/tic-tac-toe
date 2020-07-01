@@ -131,6 +131,7 @@ class Board
   end
 
   def hori_wins?(piece)
+    hori_combo.any? { |hori| hori.all?{ |n| n == piece } }
   end
 
   def diagonal_combo
