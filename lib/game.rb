@@ -1,22 +1,23 @@
 class Game
+  attr_reader :current_player
+  
   def initialize(first_player, second_player, board)
     @board = board
     @player1 = first_player
     @player2 = second_player
     @current_player = @player1
-    # @msg_hash = msg_hash
   end
 
-  def play
-    puts 'Game has started!'
-    loop do
-      @current_player.ask_position
+  # def play
+  #   # puts 'Game has started!'
+  #   loop do
+  #     @current_player.ask_position
 
-      break if game_over?
+  #     break if game_over?
 
-      switch_players
-    end
-  end
+  #     switch_players
+  #   end
+  # end
 
   def game_over?
     check_winner? || check_draw?
@@ -48,9 +49,5 @@ class Game
                       else
                         @player1
                       end
-  end
-
-  def self.display_msg(msg)
-    msg
   end
 end
