@@ -16,7 +16,7 @@ class Game
       # render the board
       @board.display_board
       @current_player.ask_position
-      
+
       break if game_over?
 
       switch_players
@@ -51,23 +51,22 @@ class Player
     @name = name
     @piece = piece
     @board = board
-    
   end
 
   def ask_position
     loop do
-        # get user position [1-9]
-        
-        player_position = get_postion
-        if valid_position?(player_position)
-            break if @board.set_piece
-        else
-         puts "Please enter a valid position on the board"
-        end
+      # get user position [1-9]
+
+      player_position = player_pos
+      if valid_position?(player_position)
+        break if @board.set_piece
+      else
+        puts 'Please enter a valid position on the board'
+      end
     end
   end
 
-  def get_postion
+  def player_pos
     puts "#{@name} : #{@piece}, Choose from 1 - 9"
     gets.strip.to_i
   end
@@ -75,7 +74,6 @@ class Player
   def valid_position?(user_pos)
     user_pos.is_a?(Integer) && (1..9).include?(user_pos)
   end
-
 end
 
 class Board
@@ -94,11 +92,11 @@ class Board
 
   def set_piece(user_pos, piece)
     if valid_piece_placement?
-       replace_pos_with_piece(user_pos, piece) 
-       remove_taken_pos(user_pos)
-       true
+      replace_pos_with_piece(user_pos, piece)
+      remove_taken_pos(user_pos)
+      true
     else
-      puts "Position has been taken"
+      puts 'Position has been taken'
       false
     end
   end
@@ -133,13 +131,12 @@ end
 # p arr.delete(8)
 # p arr
 
-
 # p [1].empty?
 # ar = ["1", "2", "X", "4", "X", "6", "X", "8", "9" ]
 # arry = [[0,4,8], [2,4,6]]
 
 # arry.each do |dia|
-  
+
 # end
 
 # positions = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -148,6 +145,5 @@ end
 
 pos = gets.strip.to_i
 p pos.is_a?(Integer) && (1..9).include?(pos)
-
 
 [].empty?
