@@ -4,6 +4,7 @@ class Game
     @player1 = first_player
     @player2 = second_player
     @current_player = @player1
+    # @msg_hash = msg_hash
   end
 
   def play
@@ -47,5 +48,9 @@ class Game
                       else
                         @player1
                       end
+  end
+
+  def self.display_msg(msg)
+    msg
   end
 end
