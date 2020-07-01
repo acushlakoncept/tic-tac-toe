@@ -126,6 +126,19 @@ class Board
     # winning combinations
   end
 
+  def diagonal_combo
+    #return diagonal win
+    [ [@board[0], @board[4], @board[8] ], [ @board[2], @board[4], @board[6]]]
+  end
+
+  def hori_combo
+    [[@board[0], @board[1], @board[2] ], [@board[3], @board[4], @board[5]], [@board[6], @board[7], @board[8]]]
+  end
+
+  def vert_combo
+    [[@board[0], @board[3], @board[6]], [@board[1], @board[4], @board[7]], [@board[2], @board[5], @board[8]]]
+  end
+
   def full?
     # is there still room to place piece?
     @positions.empty?
@@ -135,13 +148,16 @@ end
 # new_game = Game.new
 # new_game.play
 
+# newboard = Board.new
+# newboard.display_board
+
 # p [1].empty?
 # ar = ["1", "2", "X", "4", "X", "6", "X", "8", "9" ]
-# arry = [[0,4,8], [2,4,6]]
+arry = [[0,4,8], ["3","X","X"]]
 
-# arry.each do |dia|
-
-# end
+arry.any? do |dia|
+    p dia.all?{ |n| n == "X"}
+end
 
 # positions = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 # p (1..9).include?(2)
