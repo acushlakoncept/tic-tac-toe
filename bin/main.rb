@@ -119,6 +119,7 @@ class Board
 
   def full?
     # is there still room to place piece?
+    @positions.empty?
   end
 end
 
