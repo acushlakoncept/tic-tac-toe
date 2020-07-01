@@ -15,8 +15,8 @@ class Game
     loop do
       # render the board
       @board.display_board
-      # ask for the current players position
-      puts "#{@current_player.name}, Choose from 1 - 9"
+      @current_player.ask_position
+      
       break if game_over?
 
       switch_players
@@ -51,7 +51,7 @@ class Player
     @name = name
     @piece = piece
     @board = board
-    @positions = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    
   end
 
   def ask_position
@@ -59,15 +59,16 @@ class Player
         # get user position [1-9]
         
         player_position = get_postion
-        # check if position is valid
-        # set_piece
-        # else
-        # display_error and ask_position again
+        if valid_position?(player_position)
+            break if @board.set_piece
+        else
+         puts "Please enter a valid position on the board"
+        end
     end
   end
 
   def get_postion
-    puts "Enter where you want to place piece on the board [1-9]"
+    puts "#{@name} : #{@piece}, Choose from 1 - 9"
     gets.strip.to_i
   end
 
@@ -80,6 +81,7 @@ end
 class Board
   def initialize
     @board = %w[1 2 3 4 5 6 7 8 9]
+    @positions = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   end
 
   def display_board
@@ -90,8 +92,27 @@ class Board
     puts "#{@board[6]} | #{@board[7]} | #{@board[8]}"
   end
 
-  def set_piece
-    # set piece X or O on the board
+  def set_piece(user_pos, piece)
+    if valid_piece_placement?
+       replace_pos_with_piece(user_pos, piece) 
+       remove_taken_pos(user_pos)
+       true
+    else
+      puts "Position has been taken"
+      false
+    end
+  end
+
+  def valid_piece_placement?(user_pos)
+    @positions.include?(user_pos)
+  end
+
+  def remove_taken_pos(user_pos)
+    @positions.delete(user_pos)
+  end
+
+  def replace_pos_with_piece(user_pos, piece)
+    @positions[user_pos - 1] = piece
   end
 
   def win_combo
@@ -129,3 +150,4 @@ pos = gets.strip.to_i
 p pos.is_a?(Integer) && (1..9).include?(pos)
 
 
+[].empty?
