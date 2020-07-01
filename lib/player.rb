@@ -1,5 +1,5 @@
 class Player
-  attr_accessor :name, :piece
+  attr_reader :name, :piece
 
   def initialize(name, piece, board)
     @name = name
