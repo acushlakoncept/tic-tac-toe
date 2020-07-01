@@ -1,12 +1,10 @@
 
 
 class Game
-  def initialize
-    @board = Board.new
-    puts 'Player 1, input name:'
-    @player1 = Player.new(gets.strip, 'X', @board)
-    puts 'Player 2, input name:'
-    @player2 = Player.new(gets.strip, 'O', @board)
+  def initialize(first_player, second_player, board)
+    @board = board
+    @player1 = first_player
+    @player2 = second_player
     @current_player = @player1
   end
 
