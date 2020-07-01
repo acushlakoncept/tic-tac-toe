@@ -134,6 +134,10 @@ class Board
     hori_combo.any? { |hori| hori.all?{ |n| n == piece } }
   end
 
+  def vert_wins?(piece)
+    vert_combo.any? { |vert| vert.all?{ |n| n == piece } }
+  end
+
   def diagonal_combo
     [ @board[0], @board[4], @board[8] ], [ @board[2], @board[4], @board[6]]]
   end
