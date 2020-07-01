@@ -126,9 +126,15 @@ class Board
     # winning combinations
   end
 
+  def diagonal_wins?(piece)
+    diagonal_combo.any? { |dia| dia.all?{ |n| n == piece } }
+  end
+
+  def hori_wins?(piece)
+  end
+
   def diagonal_combo
-    #return diagonal win
-    [ [@board[0], @board[4], @board[8] ], [ @board[2], @board[4], @board[6]]]
+    [ @board[0], @board[4], @board[8] ], [ @board[2], @board[4], @board[6]]]
   end
 
   def hori_combo
@@ -153,11 +159,10 @@ end
 
 # p [1].empty?
 # ar = ["1", "2", "X", "4", "X", "6", "X", "8", "9" ]
-arry = [[0,4,8], ["3","X","X"]]
+arry = [["X",4,"X"], ["X","0","X"], ["X", "X", "X"]]
 
-arry.any? do |dia|
-    p dia.all?{ |n| n == "X"}
-end
+puts arry.any? { |dia| dia.all?{ |n| n == "X"} }
+
 
 # positions = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 # p (1..9).include?(2)
