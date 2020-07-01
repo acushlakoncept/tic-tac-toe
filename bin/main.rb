@@ -51,15 +51,30 @@ class Player
     @name = name
     @piece = piece
     @board = board
+    @positions = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   end
 
   def ask_position
-    # get user position [1-9]
-    # check if position is valid
-    # set_piece
-    # else
-    # display_error and ask_position again
+    loop do
+        # get user position [1-9]
+        
+        player_position = get_postion
+        # check if position is valid
+        # set_piece
+        # else
+        # display_error and ask_position again
+    end
   end
+
+  def get_postion
+    puts "Enter where you want to place piece on the board [1-9]"
+    gets.strip.to_i
+  end
+
+  def valid_position?(user_pos)
+    user_pos.is_a?(Integer) && (1..9).include?(user_pos)
+  end
+
 end
 
 class Board
@@ -106,6 +121,11 @@ end
   
 # end
 
-name = gets.strip
-p name
+# positions = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# p (1..9).include?(2)
+# p 9.between?(1, 9)
+
+pos = gets.strip.to_i
+p pos.is_a?(Integer) && (1..9).include?(pos)
+
 
