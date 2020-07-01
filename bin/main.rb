@@ -24,9 +24,7 @@ class Game
   end
 
   def game_over?
-    # check_winner
-    # check_draw
-    true
+    check_winner? || check_draw?
   end
 
   def check_winner?
@@ -38,7 +36,7 @@ class Game
     end
   end
 
-  def check_draw
+  def check_draw?
     if @board.full?
         puts "Welldone! It's a draw"
         true
