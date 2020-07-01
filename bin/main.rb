@@ -41,6 +41,11 @@ class Game
 
   def switch_players
     # player 1 > player 2 or vice versa
+    if @current_player == @player1
+        @current_player = @player2
+    else
+        @current_player = @player1
+    end
   end
 end
 
