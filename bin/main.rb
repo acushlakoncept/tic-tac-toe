@@ -13,7 +13,6 @@ class Game
   def play
     puts 'Game has started!'
     loop do
-      
       @current_player.ask_position
 
       break if game_over?
@@ -28,7 +27,7 @@ class Game
 
   def check_winner?
     if @board.win_combo?(@current_player.piece)
-     @board.display_board
+      @board.display_board
       puts "Hurray!!! #{@current_player.name}, You won!"
       true
     else
@@ -38,7 +37,7 @@ class Game
 
   def check_draw?
     if @board.full?
-        @board.display_board
+      @board.display_board
       puts "Welldone! It's a draw"
       true
     else
