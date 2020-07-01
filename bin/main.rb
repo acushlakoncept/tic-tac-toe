@@ -157,32 +157,3 @@ end
 
 new_game = Game.new
 new_game.play
-
-# newboard = Board.new
-# newboard.display_board
-
-# p [1].empty?
-# ar = ["1", "2", "X", "4", "X", "6", "X", "8", "9" ]
-# arry = [["X",4,"X"], ["X","0","X"], ["X", "X", "X"]]
-
-# puts arry.any? { |dia| dia.all?{ |n| n == "X"} }
-
-# positions = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-# p (1..9).include?(2)
-# p 9.between?(1, 9)
-
-# pos = gets.strip.to_i
-# p pos.is_a?(Integer) && (1..9).include?(pos)
-
-# def draw?
-#     if [].empty?
-#         puts "---------------------"
-#         puts "Ooops, it's a draw!"
-#         true
-#     else
-#         puts "---------------------"
-#         false
-#     end
-# end
-
-# puts "Yes!" if draw?
