@@ -13,7 +13,6 @@ class Game
   def play
     puts 'Game has started!'
     loop do
-      # render the board
       @board.display_board
       @current_player.ask_position
 
@@ -29,28 +28,28 @@ class Game
 
   def check_winner?
     if @board.win_combo?
-        puts "Hurray!!! #{@current_player.name}, You won!"
-        true
+      puts "Hurray!!! #{@current_player.name}, You won!"
+      true
     else
-        false
+      false
     end
   end
 
   def check_draw?
     if @board.full?
-        puts "Welldone! It's a draw"
-        true
+      puts "Welldone! It's a draw"
+      true
     else
-        false 
+      false
     end
   end
 
   def switch_players
-    if @current_player == @player1
-        @current_player = @player2
-    else
-        @current_player = @player1
-    end
+    @current_player = if @current_player == @player1
+                        @player2
+                      else
+                        @player1
+                      end
   end
 end
 
@@ -65,8 +64,6 @@ class Player
 
   def ask_position
     loop do
-      # get user position [1-9]
-
       player_position = player_pos
       if valid_position?(player_position)
         break if @board.set_piece
@@ -128,23 +125,23 @@ class Board
   end
 
   def diagonal_wins?(piece)
-    diagonal_combo.any? { |dia| dia.all?{ |n| n == piece } }
+    diagonal_combo.any? { |dia| dia.all? { |n| n == piece } }
   end
 
   def hori_wins?(piece)
-    hori_combo.any? { |hori| hori.all?{ |n| n == piece } }
+    hori_combo.any? { |hori| hori.all? { |n| n == piece } }
   end
 
   def vert_wins?(piece)
-    vert_combo.any? { |vert| vert.all?{ |n| n == piece } }
+    vert_combo.any? { |vert| vert.all? { |n| n == piece } }
   end
 
   def diagonal_combo
-    [ @board[0], @board[4], @board[8] ], [ @board[2], @board[4], @board[6]]]
+    [[@board[0], @board[4], @board[8]], [@board[2], @board[4], @board[6]]]
   end
 
   def hori_combo
-    [[@board[0], @board[1], @board[2] ], [@board[3], @board[4], @board[5]], [@board[6], @board[7], @board[8]]]
+    [[@board[0], @board[1], @board[2]], [@board[3], @board[4], @board[5]], [@board[6], @board[7], @board[8]]]
   end
 
   def vert_combo
@@ -156,18 +153,17 @@ class Board
   end
 end
 
-# new_game = Game.new
-# new_game.play
+new_game = Game.new
+new_game.play
 
 # newboard = Board.new
 # newboard.display_board
 
 # p [1].empty?
 # ar = ["1", "2", "X", "4", "X", "6", "X", "8", "9" ]
-arry = [["X",4,"X"], ["X","0","X"], ["X", "X", "X"]]
+# arry = [["X",4,"X"], ["X","0","X"], ["X", "X", "X"]]
 
-puts arry.any? { |dia| dia.all?{ |n| n == "X"} }
-
+# puts arry.any? { |dia| dia.all?{ |n| n == "X"} }
 
 # positions = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 # p (1..9).include?(2)
@@ -175,8 +171,6 @@ puts arry.any? { |dia| dia.all?{ |n| n == "X"} }
 
 # pos = gets.strip.to_i
 # p pos.is_a?(Integer) && (1..9).include?(pos)
-
-
 
 # def draw?
 #     if [].empty?
@@ -188,6 +182,5 @@ puts arry.any? { |dia| dia.all?{ |n| n == "X"} }
 #         false
 #     end
 # end
-
 
 # puts "Yes!" if draw?
