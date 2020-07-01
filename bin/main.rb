@@ -13,7 +13,7 @@ class Game
   def play
     puts 'Game has started!'
     loop do
-      @board.display_board
+      
       @current_player.ask_position
 
       break if game_over?
@@ -27,7 +27,8 @@ class Game
   end
 
   def check_winner?
-    if @board.win_combo?
+    if @board.win_combo?(@current_player.piece)
+     @board.display_board
       puts "Hurray!!! #{@current_player.name}, You won!"
       true
     else
@@ -37,6 +38,7 @@ class Game
 
   def check_draw?
     if @board.full?
+        @board.display_board
       puts "Welldone! It's a draw"
       true
     else
@@ -64,9 +66,10 @@ class Player
 
   def ask_position
     loop do
+      @board.display_board
       player_position = player_pos
       if valid_position?(player_position)
-        break if @board.set_piece
+        break if @board.set_piece(player_position, @piece)
       else
         puts 'Please enter a valid position on the board'
       end
@@ -98,7 +101,7 @@ class Board
   end
 
   def set_piece(user_pos, piece)
-    if valid_piece_placement?
+    if valid_piece_placement?(user_pos)
       replace_pos_with_piece(user_pos, piece)
       remove_taken_pos(user_pos)
       true
@@ -117,11 +120,11 @@ class Board
   end
 
   def replace_pos_with_piece(user_pos, piece)
-    @positions[user_pos - 1] = piece
+    @board[user_pos - 1] = piece
   end
 
-  def win_combo?
-    diagonal_wins? || hori_wins? || vert_wins?
+  def win_combo?(piece)
+    diagonal_wins?(piece) || hori_wins?(piece) || vert_wins?(piece)
   end
 
   def diagonal_wins?(piece)
