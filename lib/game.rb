@@ -1,5 +1,3 @@
-
-
 class Game
   def initialize(first_player, second_player, board)
     @board = board
