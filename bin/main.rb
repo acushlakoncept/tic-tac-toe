@@ -29,9 +29,13 @@ class Game
     true
   end
 
-  def check_winner
-    # check if current player has a winner combination
-    # display win message
+  def check_winner?
+    if @board.win_combo?
+        puts "Hurray!!! #{@current_player.name}, You won!"
+        true
+    else
+        false
+    end
   end
 
   def check_draw
@@ -44,7 +48,6 @@ class Game
   end
 
   def switch_players
-    # player 1 > player 2 or vice versa
     if @current_player == @player1
         @current_player = @player2
     else
@@ -151,7 +154,6 @@ class Board
   end
 
   def full?
-    # is there still room to place piece?
     @positions.empty?
   end
 end
