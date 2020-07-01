@@ -125,12 +125,6 @@ end
 # new_game = Game.new
 # new_game.play
 
-# arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-# p arr.include?(0)
-# p arr
-# p arr.delete(8)
-# p arr
-
 # p [1].empty?
 # ar = ["1", "2", "X", "4", "X", "6", "X", "8", "9" ]
 # arry = [[0,4,8], [2,4,6]]
