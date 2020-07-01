@@ -1,3 +1,5 @@
+
+
 class Game
   def initialize
     @board = Board.new
