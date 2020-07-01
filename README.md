@@ -22,6 +22,11 @@ $ cd <folder>
 $ git clone https://github.com/acushlakoncept/tic-tac-toe.git
 ```
 
+## Game Instructions:
+
+- 
+
+
 ## Authors
 
 👤 **Uduak Essien**
