@@ -35,8 +35,12 @@ class Game
   end
 
   def check_draw
-    # check if board is filled up
-    # display draw message
+    if @board.full?
+        puts "Welldone! It's a draw"
+        true
+    else
+        false 
+    end
   end
 
   def switch_players
@@ -143,7 +147,21 @@ end
 # p (1..9).include?(2)
 # p 9.between?(1, 9)
 
-pos = gets.strip.to_i
-p pos.is_a?(Integer) && (1..9).include?(pos)
+# pos = gets.strip.to_i
+# p pos.is_a?(Integer) && (1..9).include?(pos)
 
-[].empty?
+
+
+# def draw?
+#     if [].empty?
+#         puts "---------------------"
+#         puts "Ooops, it's a draw!"
+#         true
+#     else
+#         puts "---------------------"
+#         false
+#     end
+# end
+
+
+# puts "Yes!" if draw?
