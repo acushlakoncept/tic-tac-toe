@@ -1,6 +1,6 @@
 class Game
   attr_reader :current_player, :board
-  
+
   def initialize(first_player, second_player, board)
     @board = board
     @player1 = first_player
@@ -21,7 +21,7 @@ class Game
   def check_draw?(draw_proc, single_proc)
     if @board.full?
       single_proc.call(@board.display_board)
-      draw_proc.call()
+      draw_proc.call
       true
     else
       false

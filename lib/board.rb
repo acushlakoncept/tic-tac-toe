@@ -5,16 +5,16 @@ class Board
   end
 
   def display_board
-    board_info =  "#{@board[0]} | #{@board[1]} | #{@board[2]}"
-    board_info <<  "\n"
-    board_info <<  '---------'
-    board_info <<  "\n"
-    board_info <<  "#{@board[3]} | #{@board[4]} | #{@board[5]}"
+    board_info = "#{@board[0]} | #{@board[1]} | #{@board[2]}"
     board_info << "\n"
-    board_info <<  '---------'
+    board_info << '---------'
     board_info << "\n"
-    board_info <<  "#{@board[6]} | #{@board[7]} | #{@board[8]}"
-    board_info <<  "\n"
+    board_info << "#{@board[3]} | #{@board[4]} | #{@board[5]}"
+    board_info << "\n"
+    board_info << '---------'
+    board_info << "\n"
+    board_info << "#{@board[6]} | #{@board[7]} | #{@board[8]}"
+    board_info << "\n"
 
     board_info
   end
@@ -25,7 +25,7 @@ class Board
       remove_taken_pos(user_pos)
       true
     else
-      pos_proc.call()
+      pos_proc.call
       false
     end
   end
