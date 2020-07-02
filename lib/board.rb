@@ -19,13 +19,14 @@ class Board
     board_info
   end
 
-  def set_piece(user_pos, piece)
+  def set_piece(user_pos, piece, pos_proc)
     if valid_piece_placement?(user_pos)
       replace_pos_with_piece(user_pos, piece)
       remove_taken_pos(user_pos)
       true
     else
-      puts 'Position has been taken'
+      # puts 'Position has been taken'
+      pos_proc.call()
       false
     end
   end

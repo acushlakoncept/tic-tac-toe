@@ -7,12 +7,12 @@ class Player
     @board = board
   end
 
-  def ask_position
+  def ask_position(msg_proc)
     loop do
       puts @board.display_board
       player_position = player_pos
       if valid_position?(player_position)
-        break if @board.set_piece(player_position, @piece)
+        break if @board.set_piece(player_position, @piece, msg_proc)
       else
         puts 'Please enter a valid position on the board'
       end
