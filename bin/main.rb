@@ -1,92 +1,54 @@
 #!/usr/bin/env ruby
+require_relative '../lib/game.rb'
+require_relative '../lib/player.rb'
+require_relative '../lib/board.rb'
 
-class Game
-  def initialize
-    @board = Board.new
+def display_msg(msg = nil)
+  case msg
+  when 'welcome'
+    puts 'WELCOME TO TIC-TAC-TOE GAME!!!'
+  when 'empty'
+    puts ' '
+  when 'player1'
     puts 'Player 1, input name:'
-    @player1 = Player.new(gets.chomp, 'X', @board)
+  when 'player2'
     puts 'Player 2, input name:'
-    @player2 = Player.new(gets.chomp, 'O', @board)
-    @current_player = @player1
-  end
-
-  def play
+  when 'start_game'
     puts 'Game has started!'
-    loop do
-      # render the board
-      @board.display_board
-      # ask for the current players position
-      puts "#{@current_player.name}, Choose from 1 - 9"
-      break if game_over?
-
-      switch_players
-    end
-  end
-
-  def game_over?
-    # check_winner
-    # check_draw
-    true
-  end
-
-  def check_winner
-    # check if current player has a winner combination
-    # display win message
-  end
-
-  def check_draw
-    # check if board is filled up
-    # display draw message
-  end
-
-  def switch_players
-    # player 1 > player 2 or vice versa
   end
 end
 
-class Player
-  attr_accessor :name, :piece
+win_proc = proc { |name| puts "Hurray!!! #{name}, You won!" }
+draw_proc = proc { puts "Welldone! It's a draw" }
+pos_proc = proc { puts 'Position has been taken' }
+single_proc = proc { |elem| puts elem }
+valid_pos_proc = proc { puts 'Please enter a valid position on the board' }
 
-  def initialize(name, piece, board)
-    @name = name
-    @piece = piece
-    @board = board
-  end
-
-  def ask_position
-    # get user position [1-9]
-    # check if position is valid
-    # set_piece
-    # else
-    # display_error and ask_position again
-  end
+player_pos_proc = proc do |name, piece|
+  puts "#{name} : #{piece}, Choose from 1 - 9"
+  gets.strip.to_i
 end
 
-class Board
-  def initialize
-    @board = %w[1 2 3 4 5 6 7 8 9]
-  end
+display_msg('empty')
+display_msg('welcome')
+display_msg('empty')
+board = Board.new
 
-  def display_board
-    puts "#{@board[0]} | #{@board[1]} | #{@board[2]}"
-    puts '---------'
-    puts "#{@board[3]} | #{@board[4]} | #{@board[5]}"
-    puts '---------'
-    puts "#{@board[6]} | #{@board[7]} | #{@board[8]}"
-  end
+display_msg('player1')
+player1 = Player.new(gets.strip, 'X', board)
+display_msg('empty')
+display_msg('player2')
+player2 = Player.new(gets.strip, 'O', board)
+display_msg('empty')
 
-  def set_piece
-    # set piece X or O on the board
-  end
+new_game = Game.new(player1, player2, board)
 
-  def win_combo
-    # winning combinations
-  end
+# game play
+display_msg('start_game')
+display_msg('empty')
+loop do
+  new_game.current_player.ask_position(pos_proc, player_pos_proc, single_proc, valid_pos_proc)
+  break if new_game.check_winner?(win_proc, single_proc) || new_game.check_draw?(draw_proc, single_proc)
 
-  def full?
-    # is there still room to place piece?
-  end
+  new_game.switch_players
 end
-
-new_game = Game.new
-new_game.play
