@@ -57,8 +57,10 @@ Take input from players to determine where to show marked spots
 
 - Ruby
 
-## Live Code
-[Solution](#)
+## 🔴 Live Demo <a name = "ldl"></a>
+
+
+[![Run on Repl.it](https://repl.it/badge/github/acushlakoncept/tic-tac-toe)](https://repl.it/github/acushlakoncept/tic-tac-toe)
 
 
 ## Getting Started
@@ -72,11 +74,6 @@ $ cd <folder>
 ```
 $ git clone https://github.com/acushlakoncept/tic-tac-toe.git
 ```
-
-## Game Instructions:
-
-- 
-
 
 ## Authors
 
@@ -96,14 +93,11 @@ $ git clone https://github.com/acushlakoncept/tic-tac-toe.git
 
 Contributions, issues and feature requests are welcome!
 
-
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-
 ## Acknowledgments
 
 - Project originally taken from The Odin Project
-- Project inspired by Microverse Program
-
+- Project inspired by [Microverse](https://www.microverse.org)
