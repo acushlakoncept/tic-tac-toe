@@ -23,9 +23,9 @@ class Game
   #   check_winner? || check_draw?
   # end
 
-  def check_winner?(my_proc)
+  def check_winner?(my_proc, single_proc)
     if @board.win_combo?(@current_player.piece)
-      @board.display_board
+      single_proc.call(@board.display_board)
       # puts "Hurray!!! #{@current_player.name}, You won!"
       my_proc.call(@current_player.name)
       true
@@ -34,9 +34,9 @@ class Game
     end
   end
 
-  def check_draw?(draw_proc)
+  def check_draw?(draw_proc, single_proc)
     if @board.full?
-      @board.display_board
+      single_proc.call(@board.display_board)
       draw_proc.call()
       true
     else

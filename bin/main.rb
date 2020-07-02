@@ -43,32 +43,16 @@ new_game = Game.new(player1, player2, board)
 
 win_proc = Proc.new { |name| puts "Hurray!!! #{name}, You won!" }
 draw_proc = Proc.new { puts "Welldone! It's a draw" }
-
-# def game_over?
-#   new_game.check_winner?($proa) || new_game.check_draw?
-# end
+single_proc = Proc.new { |elem| puts elem }
 
 #game play
 display_msg("start_game")
 display_msg("empty")
 loop do
   new_game.current_player.ask_position
-  break if (new_game.check_winner?(win_proc) || new_game.check_draw?(draw_proc))
+  break if (new_game.check_winner?(win_proc, single_proc) || new_game.check_draw?(draw_proc, single_proc))
   new_game.switch_players
 end
-
-
-# class Myclass
-#   def initialize(name, proc)
-#     @name = name
-#     @proc = proc
-#   end
-#   def see_if_method_working
-#     @proc.call(@name)
-#   end
-# end
-# proc = proc { |name| name }
-# obj_class = Myclass.new('procs are amazing', proc)
 
 
 

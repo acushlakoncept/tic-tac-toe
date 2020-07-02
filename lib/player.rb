@@ -9,7 +9,7 @@ class Player
 
   def ask_position
     loop do
-      @board.display_board
+      puts @board.display_board
       player_position = player_pos
       if valid_position?(player_position)
         break if @board.set_piece(player_position, @piece)
