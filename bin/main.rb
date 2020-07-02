@@ -3,10 +3,6 @@ require_relative '../lib/game.rb'
 require_relative '../lib/player.rb'
 require_relative '../lib/board.rb'
 
-msgs = Hash.new
-msgs = {
-  "hey" => "Game Started"
-}
 
 def display_msg(msg=nil, arg=nil)
   case msg
@@ -24,6 +20,7 @@ def display_msg(msg=nil, arg=nil)
     puts "Hurray!!!, #{arg}, You won!"
   end
 end
+
 
 
 
@@ -50,3 +47,5 @@ loop do
   break if new_game.game_over?
   new_game.switch_players
 end
+
+
