@@ -10,20 +10,24 @@ According to Wikipedia Tic-tac-toe (American English), noughts and crosses (Brit
 
 ![screenshot](./tic-tac-toe.png)
 
-# User Interface:
+## User Interface:
 The game starts by calling the bin/main.rb file where all other classes are called/required.
 
-Input:
+# Input:
 - At the beginning of the game, the two players are requested to enter their names, one after the other.
-
 - The first person to enter his/her name automatically becomes player 1 and is requested to enter values 
 between [1 - 9] to mark a piece on the board.
-
 - Player 1 is automatically assigned to piece "X" and player 2 piece "O"
 
 
-Output:
-Game board will be updated to show where players' marked the spots as well as to show who wins after win conditions are met
+# Output:
+- The board class is instantiated at the beginning of the game with unmarked spots 1 to 9 on a 3x3 grid.
+- The game board is re-rendered on the screen to show player's current placement of piece. Example if 
+  player 1 takes position 5, is replaced with "X" and becomes unvailable till the end of the game.
+- This repeats until win or draw conditions are met
+- Players instructions are error messages are displayed at each intervals to guide the players
+
+
 
 Pseudocode:
 Player Class:
