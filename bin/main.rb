@@ -36,12 +36,14 @@ win_proc = proc { |name| puts "Hurray!!! #{name}, You won!" }
 draw_proc = proc { puts "Welldone! It's a draw" }
 pos_proc = proc { puts 'Position has been taken' }
 single_proc = proc { |elem| puts elem }
+valid_pos_proc = proc { puts 'Please enter a valid position on the board' }
+player_pos_proc = proc { |name, piece| puts "#{name} : #{piece}, Choose from 1 - 9"; gets.strip.to_i }
 
 # game play
 display_msg('start_game')
 display_msg('empty')
 loop do
-  new_game.current_player.ask_position(pos_proc)
+  new_game.current_player.ask_position(pos_proc, player_pos_proc, single_proc, valid_pos_proc)
   break if new_game.check_winner?(win_proc, single_proc) || new_game.check_draw?(draw_proc, single_proc)
 
   new_game.switch_players
