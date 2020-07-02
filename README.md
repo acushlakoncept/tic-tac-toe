@@ -8,21 +8,26 @@
 <a href="#method">User Interface</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#ins">Input</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#with">Output</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#ldl">Class Definitions</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#ldl">Built With</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#ldl">Live Demo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="#author">Author</a>
+<a href="#ldl">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#author">Authors</a>
 
 This is project is to demonstrate our knowledge of Object Oriented Programming Language in Ruby, building a tic-tac-toe game on the command line where two human players can play against each other and the board is displayed in between turns.
 
 ![screenshot](./screenshot.jpg)
 
-## About the Game - Tic-Tac-Toe
+# About the Game - Tic-Tac-Toe
 
 According to Wikipedia Tic-tac-toe (American English), noughts and crosses (British English), or Xs and Os is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. [readmore](https://en.wikipedia.org/wiki/Tic-tac-toe#:~:text=Tic%2Dtac%2Dtoe%20(American,diagonal%20row%20is%20the%20winner.)
 
 ![screenshot](./tic-tac-toe.png)
 
-## User Interface
-The game starts by calling the bin/main.rb file where all other classes are called/required.
+# User Interface
+The game starts by calling the bin/main.rb file where all other classes are called/required. The game is played on the **CLI**
+
+# Instructions
 
 ## Input
 - At the beginning of the game, the two players are requested to enter their names, one after the other.
@@ -39,7 +44,7 @@ between [1 - 9] to mark a piece on the board.
 - Players instructions are error messages are displayed at each intervals to guide the players
 
 
-## Class Definitions
+# Class Definitions
 
 ### **Game Class**:
 The game class initializes the **_board class_** and the **_player class_**. It handles the _check winner_ and _draw methods_ as well as _switch player method_.
@@ -60,10 +65,10 @@ Take input from players to determine where to show marked spots
 ## 🔴 Live Demo <a name = "ldl"></a>
 
 
-[![Run on Repl.it](https://repl.it/badge/github/acushlakoncept/tic-tac-toe)](https://repl.it/github/acushlakoncept/tic-tac-toe)
+[![Run on Repl.it](https://repl.it/badge/github/acushlakoncept/tic-tac-toe)](https://repl.it/@Acushla/tic-tac-toe)
 
 
-## Getting Started
+# Getting Started
 
 To get a local copy of the repository please run the following commands on your terminal:
 
@@ -75,7 +80,13 @@ $ cd <folder>
 $ git clone https://github.com/acushlakoncept/tic-tac-toe.git
 ```
 
-## Authors
+**To run the code:** 
+
+```
+$ bin/main.rb
+```
+
+# Authors
 
 👤 **Uduak Essien**
 
