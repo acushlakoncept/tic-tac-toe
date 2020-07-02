@@ -1,5 +1,16 @@
 # Implementing Tic Tac Toe Game with Ruby
 
+[![View Code](https://img.shields.io/badge/View%20-Code-green)](https://github.com/acushlakoncept/tic-tac-toe)
+[![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/acushlakoncept/tic-tac-toe/issues)
+[![GitHub Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/acushlakoncept/tic-tac-toe/pulls)
+
+<a text-align="center" href="#about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#method">User Interface</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#ins">Input</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#with">Output</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#ldl">Live Demo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a href="#author">Author</a>
+
 This is project is to demonstrate our knowledge of Object Oriented Programming Language in Ruby, building a tic-tac-toe game on the command line where two human players can play against each other and the board is displayed in between turns.
 
 ![screenshot](./screenshot.jpg)
@@ -10,17 +21,17 @@ According to Wikipedia Tic-tac-toe (American English), noughts and crosses (Brit
 
 ![screenshot](./tic-tac-toe.png)
 
-## User Interface:
+## User Interface
 The game starts by calling the bin/main.rb file where all other classes are called/required.
 
-# Input:
+## Input
 - At the beginning of the game, the two players are requested to enter their names, one after the other.
 - The first person to enter his/her name automatically becomes player 1 and is requested to enter values 
 between [1 - 9] to mark a piece on the board.
 - Player 1 is automatically assigned to piece "X" and player 2 piece "O"
 
 
-# Output:
+## Output
 - The board class is instantiated at the beginning of the game with unmarked spots 1 to 9 on a 3x3 grid.
 - The game board is re-rendered on the screen to show player's current placement of piece. Example if 
   player 1 takes position 5, is replaced with "X" and becomes unvailable till the end of the game.
@@ -28,21 +39,19 @@ between [1 - 9] to mark a piece on the board.
 - Players instructions are error messages are displayed at each intervals to guide the players
 
 
+## Class Definitions
 
-Pseudocode:
-Player Class:
+### **Game Class**:
+The game class initializes the **_board class_** and the **_player class_**. It handles the _check winner_ and _draw methods_ as well as _switch player method_.
+
+### **Player Class**:
 Will interact with Board class to select where to place pieces
 Pieces placed will be represented by X or O
 
-Board Class:
+### **Board Class**:
 Will display the game board as well as locations of marked spots
 Take input from players to determine where to show marked spots
 
-Game Class:
-Will ask for players input in turns
-Prevent illegal moves from players
-Pass on information from Player Class to Board Class
-To check if win conditions has been met
 
 ## Built With
 
