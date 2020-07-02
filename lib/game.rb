@@ -1,5 +1,5 @@
 class Game
-  attr_reader :current_player
+  attr_reader :current_player, :board
   
   def initialize(first_player, second_player, board)
     @board = board
@@ -19,24 +19,25 @@ class Game
   #   end
   # end
 
-  def game_over?
-    check_winner? || check_draw?
-  end
+  # def game_over?
+  #   check_winner? || check_draw?
+  # end
 
-  def check_winner?
+  def check_winner?(my_proc)
     if @board.win_combo?(@current_player.piece)
       @board.display_board
-      puts "Hurray!!! #{@current_player.name}, You won!"
+      # puts "Hurray!!! #{@current_player.name}, You won!"
+      my_proc.call(@current_player.name)
       true
     else
       false
     end
   end
 
-  def check_draw?
+  def check_draw?(draw_proc)
     if @board.full?
       @board.display_board
-      puts "Welldone! It's a draw"
+      draw_proc.call()
       true
     else
       false
