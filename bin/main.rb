@@ -18,6 +18,17 @@ def display_msg(msg = nil)
   end
 end
 
+win_proc = proc { |name| puts "Hurray!!! #{name}, You won!" }
+draw_proc = proc { puts "Welldone! It's a draw" }
+pos_proc = proc { puts 'Position has been taken' }
+single_proc = proc { |elem| puts elem }
+valid_pos_proc = proc { puts 'Please enter a valid position on the board' }
+
+player_pos_proc = proc do |name, piece|
+  puts "#{name} : #{piece}, Choose from 1 - 9"
+  gets.strip.to_i
+end
+
 display_msg('empty')
 display_msg('welcome')
 display_msg('empty')
@@ -31,13 +42,6 @@ player2 = Player.new(gets.strip, 'O', board)
 display_msg('empty')
 
 new_game = Game.new(player1, player2, board)
-
-win_proc = proc { |name| puts "Hurray!!! #{name}, You won!" }
-draw_proc = proc { puts "Welldone! It's a draw" }
-pos_proc = proc { puts 'Position has been taken' }
-single_proc = proc { |elem| puts elem }
-valid_pos_proc = proc { puts 'Please enter a valid position on the board' }
-player_pos_proc = proc { |name, piece| puts "#{name} : #{piece}, Choose from 1 - 9"; gets.strip.to_i }
 
 # game play
 display_msg('start_game')

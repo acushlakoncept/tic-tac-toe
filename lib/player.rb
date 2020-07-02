@@ -20,8 +20,6 @@ class Player
   end
 
   def player_pos(player_pos_proc)
-    # puts "#{@name} : #{@piece}, Choose from 1 - 9"
-    # gets.strip.to_i
     player_pos_proc.call(@name, @piece)
   end
 
