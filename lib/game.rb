@@ -8,25 +8,9 @@ class Game
     @current_player = @player1
   end
 
-  # def play
-  #   # puts 'Game has started!'
-  #   loop do
-  #     @current_player.ask_position
-
-  #     break if game_over?
-
-  #     switch_players
-  #   end
-  # end
-
-  # def game_over?
-  #   check_winner? || check_draw?
-  # end
-
   def check_winner?(my_proc, single_proc)
     if @board.win_combo?(@current_player.piece)
       single_proc.call(@board.display_board)
-      # puts "Hurray!!! #{@current_player.name}, You won!"
       my_proc.call(@current_player.name)
       true
     else

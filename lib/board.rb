@@ -25,7 +25,6 @@ class Board
       remove_taken_pos(user_pos)
       true
     else
-      # puts 'Position has been taken'
       pos_proc.call()
       false
     end

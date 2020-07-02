@@ -18,12 +18,8 @@ def display_msg(msg=nil, arg=nil)
     puts 'Game has started!'
   when "win_msg"
     puts "Hurray!!!, #{arg}, You won!"
-  when "pos_err"
-    puts 'Position has been taken'
   end
 end
-
-
 
 
 display_msg("empty")
@@ -39,7 +35,6 @@ player2 = Player.new(gets.strip, 'O', board)
 display_msg("empty")
 
 new_game = Game.new(player1, player2, board)
-# new_game.play
 
 win_proc = Proc.new { |name| puts "Hurray!!! #{name}, You won!" }
 draw_proc = Proc.new { puts "Welldone! It's a draw" }
