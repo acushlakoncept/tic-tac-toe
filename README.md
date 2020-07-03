@@ -82,9 +82,10 @@ $ git clone https://github.com/acushlakoncept/tic-tac-toe.git
 
 **To run the code:** 
 
-```
+~~~bash
 $ bin/main.rb
-```
+~~~
+
 
 # Authors
 
