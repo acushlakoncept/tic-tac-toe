@@ -65,7 +65,7 @@ Take input from players to determine where to show marked spots
 ## 🔴 Live Demo <a name = "ldl"></a>
 
 
-[![Run on Repl.it](https://repl.it/badge/github/acushlakoncept/tic-tac-toe)](https://repl.it/@Acushla/tic-tac-toe)
+[![Run on Repl.it](https://repl.it/badge/github/acushlakoncept/tic-tac-toe)](https://tic-tac-toe.acushla.repl.run/)
 
 
 # Getting Started
