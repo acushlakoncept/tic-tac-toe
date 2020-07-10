@@ -2,8 +2,8 @@ require_relative '../lib/player.rb'
 require_relative '../lib/board.rb'
 
 describe Player do
-  board = Board.new
-  player = Player.new('Uduak', 'X', board)
+  let(:board) {Board.new}
+  let(:player) {Player.new('Uduak', 'X', board)}
   it 'should receive 3 arguments' do
     expect(player.name).to eq('Uduak')
     expect(player.piece).to eq('X')
