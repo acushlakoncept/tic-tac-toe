@@ -18,6 +18,13 @@ describe Board do
       expect(board.diagonal_wins?('Y')).to be(true)
     end  
   end
+
+  describe "#hori_wins" do
+    it "should return true if player wins horizontally" do
+      board.board = %w[Y Y Y 4 5 6 7 8 9]
+      expect(board.hori_wins?('Y')).to be(true)
+    end  
+  end
   
   
   
