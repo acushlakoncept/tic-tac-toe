@@ -40,18 +40,11 @@ describe Board do
     end  
   end
   
-  
-  
   describe "#full?" do
     it 'should return true when full' do
       board.positions = []
       expect(board.full?).to be(true)
     end
   end
-  # # check_winner?
-  # describe "#check_winner?" do
-  #   xit 'should return true if game won' do
-  #     expect(game.check_winner?('X', 'Y')).to be(win_combo?('X'))
-  #   end
-  # end
+  
 end
