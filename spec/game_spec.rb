@@ -10,10 +10,18 @@ describe Game do
   single_proc = proc { |elem| puts elem }
 
   describe "#check_winner?" do
-    win_proc = proc { |name| puts "Hurray!!! #{name}, You won!" }
     it 'should return true if there is a winner' do
+      win_proc = proc { |name| puts "Hurray!!! #{name}, You won!" }
       board.board = %w[X X X 4 5 6 7 8 9]
       expect(game.check_winner?(win_proc, single_proc)).to be(true)
+    end
+  end
+
+  describe "#check_draw?" do
+    it 'should return true if the board is full' do
+      draw_proc = proc { puts "Welldone! It's a draw" }
+      board.positions = []
+      expect(game.check_draw?(draw_proc, single_proc)).to be(true)
     end
   end
 
