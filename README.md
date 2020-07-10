@@ -58,6 +58,9 @@ Will display the game board as well as locations of marked spots
 Take input from players to determine where to show marked spots
 
 
+
+
+
 ## Built With
 
 - Ruby
@@ -85,6 +88,18 @@ $ git clone https://github.com/acushlakoncept/tic-tac-toe.git
 ~~~bash
 $ bin/main.rb
 ~~~
+
+#### Testing
+
+##### Install Rspec
+
+~~~bash
+$ gem install rspec
+~~~
+
+To test the code, run `rspec` from root of the folder using terminal.
+> Rspec is used for the test.
+
 
 
 # Authors
