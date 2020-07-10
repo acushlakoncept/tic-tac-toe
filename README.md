@@ -89,14 +89,17 @@ $ git clone https://github.com/acushlakoncept/tic-tac-toe.git
 $ bin/main.rb
 ~~~
 
-Testing
+#### Testing
 
-To test the code, run `rspec` from root of the folder using terminal.
-> Rspec is used for the test.
+##### Install Rspec
 
 ~~~bash
 $ gem install rspec
 ~~~
+
+To test the code, run `rspec` from root of the folder using terminal.
+> Rspec is used for the test.
+
 
 
 # Authors
