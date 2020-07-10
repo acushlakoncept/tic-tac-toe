@@ -32,6 +32,13 @@ describe Board do
       expect(board.vert_wins?('Y')).to be(true)
     end  
   end
+
+  describe "#win_combo" do
+    it "should return true if player wins vertically" do
+      board.board = %w[Y 2 3 Y 5 6 Y 8 9]
+      expect(board.win_combo?('Y')).to be(true)
+    end  
+  end
   
   
   
