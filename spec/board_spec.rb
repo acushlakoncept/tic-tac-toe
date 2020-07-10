@@ -11,15 +11,22 @@ describe Board do
     end
   end
   
+  
+  describe "#diagonal_wins" do
+    it "should return true if player wins diagonally" do
+      board.board = %w[Y 2 3 4 Y 6 7 8 Y]
+      expect(board.diagonal_wins?('Y')).to be(true)
+    end  
+  end
+  
+  
+  
   describe "#full?" do
     it 'should return true when full' do
       board.positions = []
       expect(board.full?).to be(true)
     end
   end
-
-  
-
   # # check_winner?
   # describe "#check_winner?" do
   #   xit 'should return true if game won' do
