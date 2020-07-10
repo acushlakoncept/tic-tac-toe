@@ -2,7 +2,7 @@ require_relative '../lib/board.rb'
 require_relative '../lib/game.rb'
 
 describe Board do
-  board = Board.new
+  let(:board) {Board.new}
 
   describe '#valid_piece_placement?' do
     it 'should return true if piece placement is valid' do

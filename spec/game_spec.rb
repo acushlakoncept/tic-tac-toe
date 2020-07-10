@@ -11,7 +11,7 @@ describe Game do
 
   describe '#check_winner?' do
     it 'should return true if there is a winner' do
-      board.board = 
+      board.board = %w[X X X 4 5 6 7 8 9]
       expect(game.check_winner?(test_proc, test_proc)).to be(true)
     end
   end
